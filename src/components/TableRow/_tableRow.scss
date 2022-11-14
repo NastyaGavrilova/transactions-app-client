@@ -1,0 +1,38 @@
+@import '../../styles/variables';
+.c-table-body {
+  &__cell {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 7px 12px;
+    color: $c-text-primary;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  &__cell-0 {
+    max-width: 90px;
+  }
+  &__cell-1 {
+    max-width: 140px;
+  }
+  &__cell-2 {
+    max-width: 138px;
+  }
+  &__cell-3 {
+    max-width: 170px;
+  }
+  &__cell-4 {
+    max-width: 137px;
+  }
+  &__cell-5 {
+    max-width: 124px;
+  }
+  &__cell-6 {
+    max-width: 242px;
+  }
+  &__cell-7 {
+    max-width: 136px;
+  }
+}

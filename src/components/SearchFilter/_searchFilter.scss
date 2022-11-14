@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+
+.c-form {
+  max-width: 440px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  &__wrapper {
+    max-width: 380px;
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid $c-border;
+    background-color: $c-white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__button {
+    max-width: 48px;
+    width: 100%;
+    padding: 16px;
+    background-color: $c-background-blue;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+  }
+}
+.c-search {
+  &__input::placeholder {
+    color: $c-placeholder;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    font-style: italic;
+  }
+  &__input:focus {
+    outline: none;
+  }
+  &__input {
+    border: none;
+    color: $c-text-primary;
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+  }
+  &__divider {
+    height: 32px;
+    width: 1px;
+    background-color: $c-background-primary;
+  }
+}

@@ -1,0 +1,23 @@
+@import '../../styles/variables';
+
+.c-footer {
+  width: 100%;
+  background-color: $c-background-dark-blue;
+  padding: 14px 0;
+  position: absolute;
+  bottom: 0;
+  &__wrapper {
+    max-width: 1180px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+  }
+  &__rights {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 142%;
+    color: $c-white;
+  }
+}

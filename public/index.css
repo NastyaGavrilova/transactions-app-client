@@ -207,23 +207,14 @@ template {
 }
 
 .App {
-  max-width: 1170px;
   width: 100%;
   margin: 0 auto;
 }
 
 body {
   margin: 0;
-  background-color: #e5e5e5;
+  background-color: #ffffff;
   box-sizing: border-box;
   padding: 0;
   font-family: "Montserrat";
-}
-
-@media screen and (max-width: 1024) {
-  .App {
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
-  }
 }/*# sourceMappingURL=index.css.map */
