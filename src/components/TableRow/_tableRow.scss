@@ -17,6 +17,9 @@
   &__cell-1 {
     max-width: 140px;
   }
+  &__cell-1 > a {
+    color: $c-background-blue;
+  }
   &__cell-2 {
     max-width: 138px;
   }
