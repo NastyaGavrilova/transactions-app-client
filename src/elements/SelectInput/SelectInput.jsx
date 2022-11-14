@@ -25,7 +25,7 @@ const SelectInput = props => {
           placeholder="Address"
           ref={wrapperRef}
           onClick={() => setOpen(true)}
-          type="text"
+          type={'text'}
           value={props.value}
           onChange={props.onChange}
         />
@@ -45,28 +45,18 @@ const SelectInput = props => {
             : 'e-select-search__datalist-hidden'
         }
       >
-        {props.items
-          ?.filter(item => {
-            const searchTerm = props.value.toLowerCase();
-            const name = item.label.toLowerCase();
-
-            return searchTerm === ''
-              ? name
-              : searchTerm && name.includes(searchTerm);
-          })
-          .slice(0, 10)
-          .map(item => (
-            <option
-              onClick={() => {
-                props.onSearch(item.label);
-                setOpen(false);
-              }}
-              className="e-select-search__option"
-              key={item.id}
-            >
-              {item.label}
-            </option>
-          ))}
+        {props.items.slice(0, 10).map(item => (
+          <option
+            onClick={() => {
+              props.onSearch(item.label);
+              setOpen(false);
+            }}
+            className="e-select-search__option"
+            key={item.id}
+          >
+            {item.label}
+          </option>
+        ))}
       </datalist>
     </div>
   );

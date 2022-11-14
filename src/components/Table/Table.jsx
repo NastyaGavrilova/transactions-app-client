@@ -72,7 +72,7 @@ const Table = () => {
         </thead>
         <tbody>
           {transactions.map((item, index) => (
-            <TableRow item={item} />
+            <TableRow item={item} key={`table-row-${index}`} />
           ))}
         </tbody>
       </table>

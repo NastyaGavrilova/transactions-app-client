@@ -14,7 +14,7 @@ const TableRow = ({ item }, props) => {
     transactionFee,
   } = item;
   return (
-    <tr key={`${transactionId}`} className={`c-table-body__row`}>
+    <tr className={`c-table-body__row`}>
       <th className={`c-table-body__cell c-table-body__cell-0`}>
         {blockNumber}
       </th>
