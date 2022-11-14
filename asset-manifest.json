@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/transactions-app-client/static/css/main.7d8a202c.css",
+    "main.js": "/transactions-app-client/static/js/main.17f550d1.js",
+    "static/js/787.f385ea49.chunk.js": "/transactions-app-client/static/js/787.f385ea49.chunk.js",
+    "static/media/search-icon.svg": "/transactions-app-client/static/media/search-icon.aadded9a3ff180c770474378c5b3ecc6.svg",
+    "index.html": "/transactions-app-client/index.html",
+    "static/media/chevron.svg": "/transactions-app-client/static/media/chevron.61c21fadd55973d23f3cc59c43483a7e.svg",
+    "main.7d8a202c.css.map": "/transactions-app-client/static/css/main.7d8a202c.css.map",
+    "main.17f550d1.js.map": "/transactions-app-client/static/js/main.17f550d1.js.map",
+    "787.f385ea49.chunk.js.map": "/transactions-app-client/static/js/787.f385ea49.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d8a202c.css",
+    "static/js/main.17f550d1.js"
+  ]
+}
