@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/transactions-app-client/static/css/main.7e1394df.css",
-    "main.js": "/transactions-app-client/static/js/main.17f550d1.js",
+    "main.js": "/transactions-app-client/static/js/main.a00a928b.js",
     "static/js/787.f385ea49.chunk.js": "/transactions-app-client/static/js/787.f385ea49.chunk.js",
     "static/media/search-icon.svg": "/transactions-app-client/static/media/search-icon.aadded9a3ff180c770474378c5b3ecc6.svg",
     "index.html": "/transactions-app-client/index.html",
     "static/media/chevron.svg": "/transactions-app-client/static/media/chevron.61c21fadd55973d23f3cc59c43483a7e.svg",
     "main.7e1394df.css.map": "/transactions-app-client/static/css/main.7e1394df.css.map",
-    "main.17f550d1.js.map": "/transactions-app-client/static/js/main.17f550d1.js.map",
+    "main.a00a928b.js.map": "/transactions-app-client/static/js/main.a00a928b.js.map",
     "787.f385ea49.chunk.js.map": "/transactions-app-client/static/js/787.f385ea49.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7e1394df.css",
-    "static/js/main.17f550d1.js"
+    "static/js/main.a00a928b.js"
   ]
 }
