@@ -11,12 +11,6 @@ import { SelectStyled } from '../../elements/SelectInput/SelectInput.styled';
 import MenuItem from '@mui/material/MenuItem';
 import './_searchFilter.scss';
 const SearchFilter = () => {
-  const options = [
-    'Sender Address',
-    "Recipient's address",
-    'Transaction ID',
-    'Block Number',
-  ];
 
   const search = useSelector(state => state.search);
   const dispatch = useDispatch();

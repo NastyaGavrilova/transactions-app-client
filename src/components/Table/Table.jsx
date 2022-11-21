@@ -45,10 +45,6 @@ const Table = () => {
             ))}
           </tbody>
         </table>
-        {/* {isLoadingData && <h4 className="c-table__loading">Loading...</h4>}
-        {!isLoadingData && transactions.length === 0 && (
-          <h4 className="c-table__loading">No Transactions</h4>
-        )} */}
         {isLoadingData && (
           <div className="c-table__loader">
             <h4 className="c-table__loading">Loading...</h4>
