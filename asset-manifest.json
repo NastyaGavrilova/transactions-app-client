@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/transactions-app-client/static/css/main.7e1394df.css",
-    "main.js": "/transactions-app-client/static/js/main.a00a928b.js",
+    "main.css": "/transactions-app-client/static/css/main.89388d17.css",
+    "main.js": "/transactions-app-client/static/js/main.52663c91.js",
     "static/js/787.f385ea49.chunk.js": "/transactions-app-client/static/js/787.f385ea49.chunk.js",
+    "static/media/sprite.svg": "/transactions-app-client/static/media/sprite.4ac9e2e34dc0bb8878405601a3258836.svg",
     "static/media/search-icon.svg": "/transactions-app-client/static/media/search-icon.aadded9a3ff180c770474378c5b3ecc6.svg",
     "index.html": "/transactions-app-client/index.html",
     "static/media/chevron.svg": "/transactions-app-client/static/media/chevron.61c21fadd55973d23f3cc59c43483a7e.svg",
-    "main.7e1394df.css.map": "/transactions-app-client/static/css/main.7e1394df.css.map",
-    "main.a00a928b.js.map": "/transactions-app-client/static/js/main.a00a928b.js.map",
+    "main.89388d17.css.map": "/transactions-app-client/static/css/main.89388d17.css.map",
+    "main.52663c91.js.map": "/transactions-app-client/static/js/main.52663c91.js.map",
     "787.f385ea49.chunk.js.map": "/transactions-app-client/static/js/787.f385ea49.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e1394df.css",
-    "static/js/main.a00a928b.js"
+    "static/css/main.89388d17.css",
+    "static/js/main.52663c91.js"
   ]
 }
