@@ -1,9 +1,14 @@
 @import '../../styles/variables';
 
+.c-adaptive-table {
+  width: 84vw;
+  display: block;
+  overflow-x: auto;
+}
 .c-table {
   margin-top: 16px;
+  max-width: 1180px;
   width: 100%;
-  margin-bottom: 56px;
 
   &__header {
     background-color: $c-background-blue;
@@ -48,13 +53,17 @@
     padding: 4px 12px;
     max-width: 136px;
   }
+  &__loader {
+    margin-top: 16px;
+    max-width: 1180px;
+    width: 100%;
+  }
   &__loading {
     font-weight: 400;
     font-size: 16px;
     line-height: 142%;
     color: $c-background-dark-blue;
     text-align: center;
-    margin-bottom: 56px;
   }
 }
 table tr:first-child th:first-child {

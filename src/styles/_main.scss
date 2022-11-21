@@ -16,11 +16,13 @@
 
   &::-webkit-scrollbar-track {
     border-radius: 3px;
+    background-color: $c-white;
   }
 
   &::-webkit-slider-thumb {
     border-radius: 3px;
     outline: none;
+    background-color: $c-background-blue;
   }
 }
 
@@ -39,8 +41,8 @@
 }
 
 .App {
-  width: 100%;
-  margin: 0 auto;
+  // width: 100%;
+  // margin: 0 auto;
 }
 
 body {
@@ -50,11 +52,3 @@ body {
   padding: 0;
   font-family: $f-base;
 }
-
-// @media screen and (max-width: 1024) {
-//   .App {
-//     max-width: 1024px;
-//     width: 100%;
-//     margin: 0 auto;
-//   }
-// }

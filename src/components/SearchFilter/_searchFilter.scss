@@ -5,6 +5,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-top: 60px;
   &__wrapper {
     max-width: 380px;
     width: 100%;
@@ -49,4 +50,46 @@
     width: 1px;
     background-color: $c-background-primary;
   }
+}
+
+.c-select-search {
+  max-width: 142px;
+  // width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: $c-text-primary;
+  border: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 37.6%;
+  height: 100%;
+  background: transparent;
+  appearance: none;
+  background-image: url('../../icons/chevron.svg');
+  background-repeat: no-repeat;
+  background-position: right;
+  display: block;
+  cursor: pointer;
+  &::placeholder {
+    padding-left: 15px;
+    font-family: 'Montserrat';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    display: flex;
+    align-items: center;
+
+    color: #979797;
+  }
+  &__option {
+    max-width: 152px;
+    width: 37.6%;
+    // height: 100%;
+  }
+}
+.c-select-search:focus {
+  outline: none;
 }

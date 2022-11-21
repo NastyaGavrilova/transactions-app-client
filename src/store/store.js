@@ -1,9 +1,17 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { transactionsSlice } from './slices/transactions.slice';
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { combineReducers } from 'redux';
 
-export const store = configureStore({
-  reducer: {
-    transactions: transactionsSlice.reducer,
-  },
-  devTools: process.env.NODE_ENV === 'development',
+import { mainReducer } from './reducers/transactions.reducers';
+
+const rootReducer = combineReducers({
+  search: mainReducer,
 });
+
+const store = configureStore({
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware({
+    serializableCheck: false,
+  }),
+});
+
+export { store };

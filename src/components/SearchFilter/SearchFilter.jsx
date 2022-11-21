@@ -1,29 +1,16 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import SelectInput from '../../elements/SelectInput/SelectInput';
 import { ReactComponent as SearchIcon } from '../../icons/search-icon.svg';
-import * as transactionsSelector from '../../store/selectors/transactions.selector';
-import * as transactionsService from '../../store/services/transactions.service';
+import { ReactComponent as Chevron } from '../../icons/chevron.svg';
 import {
-  setFilterOption,
-  setSearchQuery as setQuery,
-} from '../../store/slices/transactions.slice';
+  searchTransactions,
+  selectPaginationPage,
+} from '../../store/actions/transactions.action';
+import { getTransactions } from '../../store/operations/transactions.operations';
+import { SelectStyled } from '../../elements/SelectInput/SelectInput.styled';
+import MenuItem from '@mui/material/MenuItem';
 import './_searchFilter.scss';
-let idCounter = 0;
-const getInitialValues = obj => {
-  return obj.map(value => {
-    return {
-      id: idCounter++,
-      label: value,
-    };
-  });
-};
 const SearchFilter = () => {
-  const [filter, setFilter] = useState('');
-  const [searchQuery, setSearchQuery] = useState('');
-  const dispatch = useDispatch();
-  const currentPage = useSelector(transactionsSelector.getCurrentPage);
-  const pageItemsLimit = useSelector(transactionsSelector.getTransactionsLimit);
   const options = [
     'Sender Address',
     "Recipient's address",
@@ -31,79 +18,62 @@ const SearchFilter = () => {
     'Block Number',
   ];
 
-  const handleSearchChange = e => {
-    setSearchQuery(e.target.value.trim());
-    dispatch(setQuery(e.target.value.trim()));
+  const search = useSelector(state => state.search);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getTransactions('', '', 1, 14));
+  }, [dispatch]);
+
+  const onHandleChange = e => {
+    const { name, value } = e.target;
+    dispatch(searchTransactions({ name, value }));
   };
 
-  const handleFilterOptionChange = e => {
-    if (e.target.value === 'Sender Address') {
-      setFilter('senderAddress');
-    } else if (e.target.value === "Recipient's address") {
-      setFilter('recipientsAddress');
-    } else if (e.target.value === 'Transaction ID') {
-      setFilter('transactionId');
-    } else if (e.target.value === 'Block Number') {
-      setFilter('blockNumber');
-    }
-    dispatch(setFilterOption(e.target.value));
-  };
-  const onSearch = searchTerm => {
-    if (searchTerm === 'Sender Address') {
-      setFilter('senderAddress');
-    } else if (searchTerm === "Recipient's address") {
-      setFilter('recipientsAddress');
-    } else if (searchTerm === 'Transaction ID') {
-      setFilter('transactionId');
-    } else if (searchTerm === 'Block Number') {
-      setFilter('blockNumber');
-    }
-  };
-
-  const handleSubmit = e => {
+  const onHandleSearch = e => {
+    const { inputValue, paginationPage } = search;
     e.preventDefault();
 
-    if (filter === 'blockNumber' && searchQuery) {
-      dispatch(
-        transactionsService.getTransactionsByBlockNumber({
-          filter,
-          searchQuery,
-          currentPage,
-          pageItemsLimit,
-        }),
-      );
-    } else if (filter !== 'blockNumber' && searchQuery) {
-      dispatch(
-        transactionsService.getTransactionByFilter({
-          filter,
-          searchQuery,
-          currentPage,
-          pageItemsLimit,
-        }),
-      );
-
-      setSearchQuery('');
-    }
-
-    return;
+    dispatch(
+      getTransactions(
+        inputValue.searchValue,
+        inputValue.selectValue,
+        paginationPage,
+        14,
+      ),
+    );
+    dispatch(selectPaginationPage(1));
   };
   return (
-    <form className="c-form" onSubmit={e => handleSubmit(e)}>
+    <form className="c-form" onSubmit={onHandleSearch}>
       <div className="c-form__wrapper">
         <input
           type={'text'}
           className="c-search__input"
+          name="searchValue"
           placeholder="Search..."
-          value={searchQuery}
-          onChange={handleSearchChange}
+          value={search.inputValue.searchValue}
+          onChange={onHandleChange}
         />
         <div className="c-search__divider"></div>
-        <SelectInput
-          value={filter}
-          items={getInitialValues(options)}
-          onChange={handleFilterOptionChange}
-          onSearch={onSearch}
-        />
+        <SelectStyled
+          variant="standard"
+          displayEmpty
+          placeholder="Address"
+          disableUnderline
+          IconComponent={Chevron}
+          value={search.inputValue.selectValue}
+          name={'selectValue'}
+          onChange={onHandleChange}
+        >
+          <MenuItem value={''} disabled>
+            Address
+          </MenuItem>
+          <MenuItem value={'senderAddress'}>Sender address</MenuItem>
+          <MenuItem value={'recipientsAddress'}>Recipient address</MenuItem>
+          <MenuItem value={'transactionId'}> Transaction id</MenuItem>
+          <MenuItem value={'blockNumber'}>Block number</MenuItem>
+        </SelectStyled>
       </div>
       <button className="c-form__button" type={'submit'}>
         <SearchIcon />

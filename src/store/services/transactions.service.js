@@ -1,48 +1,29 @@
 import axios from 'axios';
-import { createAsyncThunk } from '@reduxjs/toolkit';
-axios.defaults.baseURL = 'https://transactions-app-server.herokuapp.com/api';
 
-export const getTransactions = createAsyncThunk(
-  'transactions/get-transactions',
-  async (params, thunkAPI) => {
-    try {
-      const { data } = await axios.get(`/transactions`, {
-        params: { ...params },
-      });
+const BASE_URL = 'https://transactions-app-server.herokuapp.com/';
 
-      return data.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  },
-);
+const getTransactionsRequestToApi = async (
+  searchQuery,
+  filter,
+  page = 1,
+  limit = 14,
+) => {
+  try {
+    const response = await axios.get('/api/transactions', {
+      baseURL: BASE_URL,
+      params: {
+        searchQuery,
+        filter,
+        page,
+        limit,
+      },
+    });
 
-export const getTransactionByFilter = createAsyncThunk(
-  'transactions/get-transaction-search',
-  async (params, thunkAPI) => {
-    try {
-      const { data } = await axios.get(`/transactions/search`, {
-        params: { ...params },
-      });
+    return await response.data;
+  } catch (error) {
+    console.log('error', error);
+    throw error;
+  }
+};
 
-      return data.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  },
-);
-
-export const getTransactionsByBlockNumber = createAsyncThunk(
-  'transactions/get-by-block-number',
-  async (params, thunkAPI) => {
-    try {
-      const { data } = await axios.get(`/transactions/searchByBlockNumber`, {
-        params: { ...params },
-      });
-
-      return data.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  },
-);
+export { getTransactionsRequestToApi };

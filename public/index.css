@@ -189,10 +189,12 @@ template {
 }
 *::-webkit-scrollbar-track {
   border-radius: 3px;
+  background-color: #ffffff;
 }
 *::-webkit-slider-thumb {
   border-radius: 3px;
   outline: none;
+  background-color: #3a80ba;
 }
 
 .icon {
@@ -204,11 +206,6 @@ template {
 }
 .icon:not(.has-stroke) {
   stroke-width: 0;
-}
-
-.App {
-  width: 100%;
-  margin: 0 auto;
 }
 
 body {
