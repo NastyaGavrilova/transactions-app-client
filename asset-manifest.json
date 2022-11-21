@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/transactions-app-client/static/css/main.ef631389.css",
+    "main.css": "/transactions-app-client/static/css/main.00895324.css",
     "main.js": "/transactions-app-client/static/js/main.a09831af.js",
     "static/js/787.f385ea49.chunk.js": "/transactions-app-client/static/js/787.f385ea49.chunk.js",
     "static/media/sprite.svg": "/transactions-app-client/static/media/sprite.4ac9e2e34dc0bb8878405601a3258836.svg",
     "static/media/search-icon.svg": "/transactions-app-client/static/media/search-icon.aadded9a3ff180c770474378c5b3ecc6.svg",
     "index.html": "/transactions-app-client/index.html",
     "static/media/chevron.svg": "/transactions-app-client/static/media/chevron.61c21fadd55973d23f3cc59c43483a7e.svg",
-    "main.ef631389.css.map": "/transactions-app-client/static/css/main.ef631389.css.map",
+    "main.00895324.css.map": "/transactions-app-client/static/css/main.00895324.css.map",
     "main.a09831af.js.map": "/transactions-app-client/static/js/main.a09831af.js.map",
     "787.f385ea49.chunk.js.map": "/transactions-app-client/static/js/787.f385ea49.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef631389.css",
+    "static/css/main.00895324.css",
     "static/js/main.a09831af.js"
   ]
 }
